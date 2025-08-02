@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Ship Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .error-border {
+            border-color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Space Ship Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="SpaceShip">
+                            <div class="form-group">
+                                <label for="HomePlanet">Home Planet:</label>
+                                <input type="text" class="form-control" id="HomePlanet" name="HomePlanet" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="CryoSleep">Cryo Sleep :</label>
+                                <input type="number" class="form-control" id="CryoSleep" name="CryoSleep" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="Destination">Destination :</label>
+                                <input type="number" class="form-control" id="Destination" name="Destination" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="Age">Age :</label>
+                                <input type="number" class="form-control" id="Age" name="Age" step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="VIP">VIP :</label>
+                                <input type="number" class="form-control" id="VIP" name="VIP" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="RoomService">Room Service :</label>
+                                <input type="number" class="form-control" id="RoomService" name="RoomService"
+                                    step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="FoodCourt">Food Court :</label>
+                                <input type="number" class="form-control" id="FoodCourt" name="FoodCourt" step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="ShoppingMall">Shopping Mall :</label>
+                                <input type="number" class="form-control" id="ShoppingMall" name="ShoppingMall"
+                                    step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="Spa">Spa :</label>
+                                <input type="number" class="form-control" id="Spa" name="Spa" step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="VRDeck">VR Deck :</label>
+                                <input type="number" class="form-control" id="VRDeck" name="VRDeck" step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="Deck">Deck :</label>
+                                <input type="number" class="form-control" id="Deck" name="Deck" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="Num">Num :</label>
+                                <input type="number" class="form-control" id="Num" name="Num" step="any">
+                            </div>
+                            <div class="form-group">
+                                <label for="Side">Side :</label>
+                                <input type="number" class="form-control" id="Side" name="Side" min="0">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#SpaceShip').validate({
+                rules: {
+                    HomePlanet: {
+                        required: true
+                    },
+                    CryoSleep: {
+                        required: true,
+                        number: true
+                    },
+                    Destination: {
+                        required: true,
+                        number: true
+                    },
+                    Age: {
+                        required: true,
+                        number: true
+                    },
+                    VIP: {
+                        required: true,
+                        number: true
+                    },
+                    RoomService: {
+                        required: true,
+                        number: true
+                    },
+                    FoodCourt: {
+                        required: true,
+                        number: true
+                    },
+                    ShoppingMall: {
+                        required: true,
+                        number: true
+                    },
+                    Spa: {
+                        required: true,
+                        number: true
+                    },
+                    VRDeck: {
+                        required: true,
+                        number: true
+                    },
+                    Deck: {
+                        required: true,
+                        number: true
+                    },
+                    Num: {
+                        required: true,
+                        number: true
+                    },
+                    Side: {
+                        required: true,
+                        number: true
+                    }
+                },
+                messages: {
+                    HomePlanet: "Please enter your Home Planet",
+                    CryoSleep: "Please enter Cryo Sleep as an integer",
+                    Destination: "Please enter Destination as an integer",
+                    Age: "Please enter your Age as a float",
+                    VIP: "Please enter VIP as an integer",
+                    RoomService: "Please enter Room Service as a float",
+                    FoodCourt: "Please enter Food Court as a float",
+                    ShoppingMall: "Please enter Shopping Mall as a float",
+                    Spa: "Please enter Spa as a float",
+                    VRDeck: "Please enter VR Deck as a float",
+                    Deck: "Please enter Deck as an integer",
+                    Num: "Please enter Num as a float",
+                    Side: "Please enter Side as an integer"
+                },
+                submitHandler: function (form) {
+                    var data = JSON.stringify({
+                        HomePlanet: $('#HomePlanet').val(),
+                        CryoSleep: parseInt($('#CryoSleep').val()),
+                        Destination: parseInt($('#Destination').val()),
+                        Age: parseFloat($('#Age').val()),
+                        VIP: parseInt($('#VIP').val()),
+                        RoomService: parseFloat($('#RoomService').val()),
+                        FoodCourt: parseFloat($('#FoodCourt').val()),
+                        ShoppingMall: parseFloat($('#ShoppingMall').val()),
+                        Spa: parseFloat($('#Spa').val()),
+                        VRDeck: parseFloat($('#VRDeck').val()),
+                        Deck: parseInt($('#Deck').val()),
+                        Num: parseFloat($('#Num').val()),
+                        Side: parseInt($('#Side').val())
+                    })
+                    console.log(data)
+                    $.ajax({
+                        url: 'http://127.0.0.1:1111/SpaceShip',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: data,
+                        success: function (response) {
+                            $('#SpaceShip')[0].reset();
+                            var jsonTxt = JSON.parse(response);
+                            if(jsonTxt.result*1==1){
+                                res_data="Transported"
+                            }else{
+                                res_data="Not Transported"
+                            }
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Prediction Successful!',
+                                text: res_data,
+                            });
+                        },
+                        error: function (xhr, status, error) {
+
+                            console.error(xhr.responseText);
+                        }
+                    });
+                    return false;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
